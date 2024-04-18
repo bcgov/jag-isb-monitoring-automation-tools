@@ -23,7 +23,7 @@ To run the script, run the following command:
 
 `python3 .\reset_monitors.py --username admin --password <uptime_kuma_password> --monitor_list <optional_list_of_monitors>`
 
-The monitor list is optional if you want to specify which monitors to reset. Otherwise, it will reset all monitors that do not have the 'TEST' or 'DO NOT RESET' tags. Maintenance monitors will be reset, so you will need to specify a tag to avoid them from being reset and taken out of maintenance. 
+The monitor list is optional if you want to specify which monitors to reset. Otherwise, it will reset all monitors that do not have the 'TEST' or 'DO NOT RESET' tags. Maintenance monitors will be reset by default. I would recommend using a specified list of monitors to avoid resetting monitors under maintenance. 
 
 #### add_tags.py -
 This file is used to add tags to PAUSED monitors. This can be used to prevent paused monitors from being reset. 
