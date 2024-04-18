@@ -9,8 +9,8 @@ These scripts are for use with the unofficial Uptime Kuma API
 - pip package manager: https://pip.pypa.io/en/stable/installation/
 - virtualenv to create a virtual environment for managing Python package installations.     
 
--- Refer to this guide for information on virtual environments: https://virtualenv.pypa.io/en/stable/installation \n
--- Refer to this guide for installation instructions for Windows https://mothergeo-py.readthedocs.io/en/latest/development/how-to/venv-win.html 
+- Refer to this guide for information on virtual environments: https://virtualenv.pypa.io/en/stable/installation 
+- Refer to this guide for installation instructions for Windows https://mothergeo-py.readthedocs.io/en/latest/development/how-to/venv-win.html 
 
 - using pip to install the requirements.txt file:
     pip install -r requirements. txt
