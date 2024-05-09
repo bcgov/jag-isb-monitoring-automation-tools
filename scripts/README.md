@@ -15,6 +15,10 @@ These scripts are for use with the unofficial Uptime Kuma API
 - using pip to install the requirements.txt file:
     pip install -r requirements. txt
 
+- For use in Emerald environments, port forwarding is currently the only working method to use this. Refer to this page for more information on port forwarding to containers on Openshift: https://docs.openshift.com/container-platform/4.11/nodes/containers/nodes-containers-port-forwarding.html
+
+
+
 ### Scripts
 
 #### reset_monitors.py - this file is used to reset monitors on a backup/restore process. 
