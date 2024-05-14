@@ -10,7 +10,7 @@ env:
   CONTEXT: docker/fluentbit/
 
 jobs:
-  build-backend:
+  build-fluentbit-splunk:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
