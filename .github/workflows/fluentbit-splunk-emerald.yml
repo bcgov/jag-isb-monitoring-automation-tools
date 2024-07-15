@@ -1,4 +1,4 @@
-name: FluentBit - Build & Deploy To DEV Silver
+name: FluentBit - Build and push to Tools Emerald
 
 on:
   workflow_dispatch:
