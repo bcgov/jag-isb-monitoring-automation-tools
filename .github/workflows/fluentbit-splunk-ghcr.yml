@@ -1,0 +1,36 @@
+name: Deploy Fluentbit Splunk Image to GHCR
+
+env:
+    NAMESPACE: bcgov/jag-isb-monitoring-automation-tools
+
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main #TODO: Make for develop, test, and prod
+    paths:
+        - .github/workflows/fluentbit-splunk-ghcr.yml
+        - docker/fluentbit/**
+
+jobs:
+      push-store-image:
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: './docker/fluentbit'
+        steps:
+          - name: 'Checkout GitHub Action'
+            uses: actions/checkout@main
+
+          - name: 'Login to GitHub Container Registry'
+            uses: docker/login-action@v1
+            with:
+              registry: ghcr.io
+              username: ${{github.actor}}
+              password: ${{secrets.GITHUB_TOKEN}}
+
+          - name: 'Build Inventory Image'
+            run: |
+              docker build . --tag ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
+              docker push ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
