@@ -37,5 +37,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build -t ghcr.io/${{ env.GHCR_NAMESPACE }}/${{ env.NAME }}:latest -f ${{ env.CONTEXT }}Dockerfile.ci 
+              docker build -t ghcr.io/${{ env.GHCR_NAMESPACE }}/${{ env.NAME }}:latest ${{ env.CONTEXT }} -f ${{ env.CONTEXT }}Dockerfile.ci 
               docker push ghcr.io/${{ env.GHCR_NAMESPACE }}/${{ env.NAME }}:latest
