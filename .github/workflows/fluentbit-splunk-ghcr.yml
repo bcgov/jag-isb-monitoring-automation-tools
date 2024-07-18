@@ -1,7 +1,12 @@
 name: Deploy Fluentbit Splunk Image to GHCR
 
 env:
-    NAMESPACE: bcgov/jag-isb-monitoring-automation-tools
+    NAME: fluentbit-splunk
+    GHCR_NAMESPACE: bcgov/jag-isb-monitoring-automation-tools
+    CONTEXT: docker/fluentbit/
+    INITIAL_TAG: latest
+    # TODO: Implement per-env tags
+    # TAG: dev
 
 
 on:
@@ -32,5 +37,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build ./docker/fluentbit/Dockerfile.ci --tag ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
-              docker push ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
+              docker build -f ${{ env.CONTEXT }}Dockerfile.ci --tag ghcr.io/${{ env.GHCR_NAMESPACE }}/${{ env.NAME }}:latest
+              docker push ghcr.io/${{ env.GHCR_NAMESPACE }}/${{ env.NAME }}:latest
