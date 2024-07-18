@@ -16,9 +16,9 @@ on:
 jobs:
       push-store-image:
         runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: './docker/fluentbit'
+        # defaults:
+        #   run:
+        #     working-directory: './docker/fluentbit/'
         steps:
           - name: 'Checkout GitHub Action'
             uses: actions/checkout@main
@@ -32,5 +32,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
+              docker build ./docker/fluentbit/Dockerfile.ci --tag ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
               docker push ghcr.io/${{ env.NAMESPACE }}/fluentbit-splunk:latest
