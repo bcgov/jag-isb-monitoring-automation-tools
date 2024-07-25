@@ -1,0 +1,18 @@
+apiVersion: ops.gov.bc.ca/v1alpha1
+kind: SysdigTeam
+metadata:
+  name: d62d2f-sysdigteam
+  namespace: d62d2f-tools
+spec:
+  team:
+    description: The Sysdig Team for ISB Monitoring and Observability Services Team
+    users:
+    - name: cameron.1.wilson@gov.bc.ca
+      role: ROLE_TEAM_EDIT
+    - name: Andrew.McGill@gov.bc.ca
+      role: ROLE_TEAM_EDIT
+    - name: Alexander.Aleshchenko@gov.bc.ca
+      role: ROLE_TEAM_READ
+    - name: Jennifer.Dowd@gov.bc.ca
+      role: ROLE_TEAM_READ
+
