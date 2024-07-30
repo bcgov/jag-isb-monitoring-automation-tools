@@ -1,6 +1,6 @@
 #from artifacts.developer.gov.bc.ca/docker-remote/fluent/fluent-bit:1.5.7
 # Use the debug version of the fluent bit container, since it contains a shell and allows for vault secrets injection
-from fluent/fluent-bit:1.5.7-debug 
+FROM fluent/fluent-bit:3.1.4
 
 COPY fluent-bit.conf /fluent-bit/etc/
 COPY parsers.conf /fluent-bit/etc/
