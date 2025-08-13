@@ -2,7 +2,14 @@ name: Grafana - Build and push to Tools Emerald
 
 on:
   workflow_dispatch:
-  
+  push:
+    branches:
+      - main #TODO: Make for develop, test, and prod
+    paths:
+        - .github/workflows/grafana-emerald.yaml
+        - docker/grafana/**
+
+
 env:
   INITIAL_TAG: latest
   TAG: dev

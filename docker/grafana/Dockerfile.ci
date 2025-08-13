@@ -1,0 +1,15 @@
+# Dockerfile
+FROM grafana/grafana:10.3.2
+
+# Pre-install plugins
+RUN grafana-cli plugins install grafana-pyroscope-app
+RUN grafana-cli plugins install grafana-exploretraces-app
+RUN grafana-cli plugins install grafana-metricsdrilldown-app
+
+# Optional: Copy default dashboards
+COPY dashboards/ /var/lib/grafana/dashboards/
+
+# Set permissions (Grafana runs as grafana user)
+USER root
+RUN chown -R grafana:grafana /var/lib/grafana/dashboards
+USER grafana
